@@ -93,7 +93,8 @@ function uptime() {
 	return duration($time[0]);
 }
 
-function readconf($lines) {
+function readconf($file) {
+	$lines = explode("\n", file_get_contents($file));
 	$conf = array();
 	foreach($lines as $line) {
 		$line = trim($line);
